@@ -3,8 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
-	"hostmonitor"
 	"net/http"
+
+	"hostmonitor"
 )
 
 func main() {
