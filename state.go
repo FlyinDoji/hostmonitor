@@ -1,4 +1,4 @@
-package monitor
+package hostmonitor
 
 import "time"
 
@@ -125,7 +125,7 @@ func (st *stateSet) delete(id uint) {
 }
 
 // Update requests must first check if the State is still in the Set
-// as the monitor might be deleted while a test is being performed
+// as the cmd might be deleted while a test is being performed
 func stateManager(exit chan bool) (chan stateAddOp, chan stateDelOp, chan monitorState, ReadPipe) {
 
 	stSet := newStateSet()

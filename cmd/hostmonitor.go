@@ -3,17 +3,16 @@ package main
 import (
 	"flag"
 	"fmt"
+	"hostmonitor"
 	"net/http"
-
-	"engine/monitor"
 )
 
 func main() {
 
 	managerStop := make(chan bool)
 
-	add, del, read := monitor.Manager(managerStop)
-	r := monitor.NewRouter(add, del, read)
+	add, del, read := hostmonitor.Manager(managerStop)
+	r := hostmonitor.NewRouter(add, del, read)
 
 	port := flag.String("port", "8085", "API port")
 	flag.Parse()

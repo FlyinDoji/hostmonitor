@@ -1,10 +1,11 @@
-package monitor
+package hostmonitor
 
 import (
 	"fmt"
-	"github.com/julienschmidt/httprouter"
 	"net/http"
 	"time"
+
+	"github.com/julienschmidt/httprouter"
 )
 
 type respMsg struct {
@@ -25,7 +26,7 @@ func responseBodyWriter(w http.ResponseWriter, rb interface{}) {
 	w.Write(msg)
 }
 
-// AddHTTPMonitor adds a new monitor to the engine
+// AddHTTPMonitor adds a new cmd to the engine
 func (add *AddPipe) addHTTPMonitor(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 
 	rb := &respMsg{Ok: true, Message: "Monitor added"}
@@ -75,7 +76,7 @@ func (add *AddPipe) addHTTPMonitor(w http.ResponseWriter, r *http.Request, p htt
 
 }
 
-// deleteMonitor removes an existing monitor from the engine
+// deleteMonitor removes an existing cmd from the engine
 func (del *DelPipe) deleteMonitor(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 
 	rb := &respMsg{Ok: true, Message: "Monitor deleted"}

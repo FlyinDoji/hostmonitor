@@ -1,4 +1,4 @@
-package monitor
+package hostmonitor
 
 import (
 	"encoding/json"

@@ -1,4 +1,4 @@
-package monitor
+package hostmonitor
 
 import (
 	"context"
@@ -232,7 +232,7 @@ func schedule(m monitor, resQ chan monitorState) {
 
 }
 
-//Manager synchronously handles all the thread-unsafe operations on the monitor Map
+//Manager synchronously handles all the thread-unsafe operations on the cmd Map
 func Manager(exit chan bool) (AddPipe, DelPipe, ReadPipe) {
 
 	monitorSet := newMonitorSet()
